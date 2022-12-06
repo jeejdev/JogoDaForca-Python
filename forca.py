@@ -156,17 +156,21 @@ def jogarNovamente():
 
 def ganhou():
     if set(letrasCertas) == set(palavraEscolhida):
-        print('=*=*') * 10
+        print(('-*-') * 13)
         print('Parabéns, você acertou todas as letras!')
-        print('=*=*') * 10
+        print(('-*-') * 13)
         jogarNovamente()
 
 def perdeu():
     if len(letrasErradas) >= 7:
         print('Ei, você perdeu! :(')
+        print(f'A palavra era: {palavraEscolhida}')
         jogarNovamente()
 
 while True:
+    #DEBUG MODE
+    #print(palavraEscolhida)
+
     #ESQUEMA PARA CHUTAR UMA LETRA
     x = input('Insira uma letra: ').lower()
     chute(x)
